@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>FF Prediction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="btn btn-primary ms-2" href="/prediction">FF Prediction</a>
+    </div>
+  </nav>
+
+  <div class="container mt-4" style="max-width: 500px;">
+    <h4 class="mb-3">Fill in the data</h4>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div class="mb-2">
+        <label class="form-label">{{ form.longitude.label }}</label>
+        {{ form.longitude(class="form-control", placeholder="1-7") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.latitude.label }}</label>
+        {{ form.latitude(class="form-control", placeholder="1-7") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.month.label }}</label>
+        {{ form.month(class="form-control", placeholder="01-Jan ~ 12-Dec") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.day.label }}</label>
+        {{ form.day(class="form-control", placeholder="00-sun ~ 06-sat, 07-hol") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.avg_temp.label }}</label>
+        {{ form.avg_temp(class="form-control") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.max_temp.label }}</label>
+        {{ form.max_temp(class="form-control") }}
+      </div>
+      <div class="mb-2">
+        <label class="form-label">{{ form.max_wind_speed.label }}</label>
+        {{ form.max_wind_speed(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        <label class="form-label">{{ form.avg_wind.label }}</label>
+        {{ form.avg_wind(class="form-control") }}
+      </div>
+
+      {{ form.submit(class="btn btn-primary") }}
+    </form>
+    <p class="mt-4 text-muted">© Samkeun Kim</p>
+  </div>
+</body>
+</html>
